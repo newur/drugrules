@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1gl5f6v" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.5.0">
+  <bpmn:collaboration id="Collaboration_009wl9h">
+    <bpmn:participant id="ProcessOne" name="Process One" processRef="P001_Process" />
+  </bpmn:collaboration>
+  <bpmn:process id="P001_Process" name="Process 001" isExecutable="true" camunda:versionTag="1">
+    <bpmn:startEvent id="StartEvent_1" name="Start">
+      <bpmn:outgoing>SequenceFlow_0m9kbgv</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0m9kbgv" sourceRef="StartEvent_1" targetRef="P001R001" />
+    <bpmn:sequenceFlow id="SequenceFlow_06xluz2" sourceRef="P001R001" targetRef="P001S001" />
+    <bpmn:businessRuleTask id="P001R001" name="Choose Medicin" camunda:resultVariable="med" camunda:decisionRef="givePenecelin">
+      <bpmn:incoming>SequenceFlow_0m9kbgv</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_06xluz2</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:endEvent id="EndEvent_1wzsyn1">
+      <bpmn:incoming>SequenceFlow_1310c3v</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:userTask id="P001T001" name="User Task">
+      <bpmn:incoming>SequenceFlow_0lk16uf</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1310c3v</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_1310c3v" sourceRef="P001T001" targetRef="EndEvent_1wzsyn1" />
+    <bpmn:sequenceFlow id="SequenceFlow_0lk16uf" sourceRef="P001S001" targetRef="P001T001" />
+    <bpmn:serviceTask id="P001S001" name="Service Task" camunda:delegateExpression="${serviceTask}">
+      <bpmn:incoming>SequenceFlow_06xluz2</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0lk16uf</bpmn:outgoing>
+    </bpmn:serviceTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_009wl9h">
+      <bpmndi:BPMNShape id="Participant_0nlpzo5_di" bpmnElement="ProcessOne" isHorizontal="true">
+        <dc:Bounds x="129" y="100" width="721" height="260" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="192" y="212" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="198" y="255" width="25" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0m9kbgv_di" bpmnElement="SequenceFlow_0m9kbgv">
+        <di:waypoint x="228" y="230" />
+        <di:waypoint x="300" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_1uesq4v_di" bpmnElement="P001T001">
+        <dc:Bounds x="620" y="190" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_1wzsyn1_di" bpmnElement="EndEvent_1wzsyn1">
+        <dc:Bounds x="772" y="212" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1310c3v_di" bpmnElement="SequenceFlow_1310c3v">
+        <di:waypoint x="720" y="230" />
+        <di:waypoint x="772" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_06xluz2_di" bpmnElement="SequenceFlow_06xluz2">
+        <di:waypoint x="400" y="230" />
+        <di:waypoint x="450" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="BusinessRuleTask_1o1h481_di" bpmnElement="P001R001">
+        <dc:Bounds x="300" y="190" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0lk16uf_di" bpmnElement="SequenceFlow_0lk16uf">
+        <di:waypoint x="550" y="230" />
+        <di:waypoint x="620" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_1m4ji71_di" bpmnElement="P001S001">
+        <dc:Bounds x="450" y="190" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

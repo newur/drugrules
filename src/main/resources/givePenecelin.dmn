@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_1fwor0l" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.5.0">
+  <decision id="givePenecelin" name="Give Penecelin" camunda:versionTag="1">
+    <decisionTable id="decisionTable_1" hitPolicy="FIRST">
+      <input id="input_1" label="Blood Indication 1">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>Season</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_13u5x2n">
+          <text></text>
+        </inputValues>
+      </input>
+      <input id="InputClause_0cvec5x" label="Age">
+        <inputExpression id="LiteralExpression_1v44zl0" typeRef="integer">
+          <text>Age</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="Medication" name="Medication" typeRef="string" />
+      <rule id="DecisionRule_18mv0l3">
+        <inputEntry id="UnaryTests_055gcyb">
+          <text>"good"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f939lg">
+          <text>&lt;= 30</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1f3anaz">
+          <text>"Aspirin"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1eu9ues">
+        <inputEntry id="UnaryTests_0avloan">
+          <text>"soso"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0g6egdn">
+          <text>&lt;= 70</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0027wl2">
+          <text>"Normal Stuff"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1eo9olu">
+        <inputEntry id="UnaryTests_07zjzvr">
+          <text>"bad"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cpmi69">
+          <text>&gt; 70</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ftt4sy">
+          <text>"hard stuff"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1swop7h">
+        <inputEntry id="UnaryTests_119l0ir">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fwrs58">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ybb11k">
+          <text>"ask a colleague"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
