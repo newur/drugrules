@@ -23,7 +23,7 @@ public class App {
 
     @EventListener
     private void processPostDeploy(PostDeployEvent event) {
-        Map<String, Object> processVariables = Map.of("Season", "good", "Age", 29);
-        runtimeService.startProcessInstanceByKey("P001_Process", processVariables);
+//        Map<String, Object> processVariables = Map.of("Season", "good", "Age", 29);
+//        runtimeService.startProcessInstanceByKey("P001_Process", processVariables);
     }
 }

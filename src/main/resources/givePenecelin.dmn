@@ -10,9 +10,19 @@
           <text></text>
         </inputValues>
       </input>
-      <input id="InputClause_0cvec5x" label="Age">
+      <input id="InputClause_0cvec5x" label="CRP">
         <inputExpression id="LiteralExpression_1v44zl0" typeRef="integer">
           <text>Age</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_04qlsnr" label="Pathogen">
+        <inputExpression id="LiteralExpression_1c03x2o" typeRef="string">
+          <text>abc</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0sw4je2" label="PCT">
+        <inputExpression id="LiteralExpression_1y5q12x" typeRef="string">
+          <text></text>
         </inputExpression>
       </input>
       <output id="output_1" label="Medication" name="Medication" typeRef="string" />
@@ -22,6 +32,12 @@
         </inputEntry>
         <inputEntry id="UnaryTests_1f939lg">
           <text>&lt;= 30</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05b7mc5">
+          <text>"Staphylococcus areus"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qqd86f">
+          <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1f3anaz">
           <text>"Aspirin"</text>
@@ -34,6 +50,12 @@
         <inputEntry id="UnaryTests_0g6egdn">
           <text>&lt;= 70</text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0ccsfoi">
+          <text>"Streptococcus pneumoniae"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xuvo1o">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0027wl2">
           <text>"Normal Stuff"</text>
         </outputEntry>
@@ -44,6 +66,12 @@
         </inputEntry>
         <inputEntry id="UnaryTests_1cpmi69">
           <text>&gt; 70</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0q69kqd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0polfqk">
+          <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ftt4sy">
           <text>"hard stuff"</text>
@@ -56,8 +84,31 @@
         <inputEntry id="UnaryTests_1fwrs58">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0r4yreu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e05nuy">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1ybb11k">
           <text>"ask a colleague"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_018bco0">
+        <inputEntry id="UnaryTests_04bsa3z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nsqwy9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lyjhe3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0e9vmxw">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1tb5nr3">
+          <text></text>
         </outputEntry>
       </rule>
     </decisionTable>
